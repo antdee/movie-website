@@ -1,0 +1,27 @@
+
+h1 {
+	text-align: center;
+}
+
+.storyline {
+	font-style: oblique;
+}
+
+.duration {
+	font-size: .8em;
+}
+
+
+.rating {
+	color: #aeaf3b;
+}
+
+.title {
+	font-size: 1.8em;
+}
+
+.season {
+	font-size: .9em;
+	font-style: oblique;
+
+}

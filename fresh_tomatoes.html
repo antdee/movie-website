@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="fresh_style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+    //    $(document).ready(function () {
+    //      $('.movie-tile').hide().first().show("fast", function showNext() {
+    //        $(this).next("div").show("fast", showNext);
+    //      });
+    //  });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1>List of Movies</h1>
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="KYz2wyBy3kc" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.impawards.com/1995/posters/toy_story_ver1_xlg.jpg" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> March 22, 1996 </div>
+    <div class = "duration"><b>Duration:</b> 1:21:00</div>
+    <h3>Toy Story</h3>
+    <div class="rating"> <b>8.3/10 IMDb</b> </div>
+    <div class="storyline">A story of a boy</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5PSNL1qE6VY" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/ZQ42JE" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> December 18, 2009 </div>
+    <div class = "duration"><b>Duration:</b> 2:42:00</div>
+    <h3>Avatar</h3>
+    <div class="rating"> <b>7.8/10 IMDb</b> </div>
+    <div class="storyline">A marine on an alien planet</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="XCwy6lW5Ixc" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/11/School_of_Rock_Poster.jpg" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> February 6, 2004 </div>
+    <div class = "duration"><b>Duration:</b> 1:49:00</div>
+    <h3>School of Rock</h3>
+    <div class="rating"> <b>7.1/10 IMDb</b> </div>
+    <div class="storyline">Kids playing music and all that</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="c3sBBRxDAqk" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/71VDlRubWtL._SY550_.jpg" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> June 28, 2007 </div>
+    <div class = "duration"><b>Duration:</b> 1:51:00</div>
+    <h3>Ratatouille</h3>
+    <div class="rating"> <b>8/10 IMDb</b> </div>
+    <div class="storyline">A rat cooking</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FAfR8omt-CY" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/J39d9r" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> October 7, 2011 </div>
+    <div class = "duration"><b>Duration:</b> 1:40:00</div>
+    <h3>Midnight in Paris</h3>
+    <div class="rating"> <b>7.7/10 IMDb</b> </div>
+    <div class="storyline">Paris in the middle of the night</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="mfmrPu43DF8" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/DFUvYF" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> March 23, 2012 </div>
+    <div class = "duration"><b>Duration:</b> 2:22:00</div>
+    <h3>The Hunger Games</h3>
+    <div class="rating"> <b>7.3/10 IMDb</b> </div>
+    <div class="storyline">Hungry people fighting???</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="V75dMMIW2B4" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/wv3hc4" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> December 19, 2001 </div>
+    <div class = "duration"><b>Duration:</b> 3:48:00</div>
+    <h3>The Lord of the Rings: The Fellowship of the Ring</h3>
+    <div class="rating"> <b>8.8/10 IMDb</b> </div>
+    <div class="storyline">Middle-earth</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LbfMDwc4azU" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/hZ1qwR" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> December 18, 2002 </div>
+    <div class = "duration"><b>Duration:</b> 3:55:00</div>
+    <h3>The Lord of the Rings: The Two Towers</h3>
+    <div class="rating"> <b>8.7/10 IMDb</b> </div>
+    <div class="storyline">The sequel,'</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="r5X-hFf6Bwo" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/UAeTR3" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> December 17, 2003 </div>
+    <div class = "duration"><b>Duration:</b> 3:55:00</div>
+    <h3>The Lord of the Rings: The Return of the King</h3>
+    <div class="rating"> <b>8.9/10 IMDb</b> </div>
+    <div class="storyline">It is the third and final installment in The Lord of the Rings trilogy</div>
+</div>
+<h1>List of Series</h1>
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="r36OT6TsHOw" data-toggle="modal" data-target="#trailer">
+    <img src="http://cdn.putlockers.fm/ebLiMkG.jpg" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> June 30, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 12 Episodes</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">Season 1</b>: <span class = "title">Ray Donovan</span>
+    <div class="rating"> <b>9.0/10 IMDb</b> </div>
+    <div class="storyline">Ray Donovan is a 'fixer' for the powerful law firm Goldman & Drexler,representing the rich and famous of Los Angeles, California.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="YISeuBninSk" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/DbgWSp" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> June 30, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:59:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep01</b>: <span class = "title">The Bag or the Bat</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Ray Donovan fixes problems for a powerful LA law firm. Originally from SouthBoston, he now lives in the affluent city of Calabasas, California.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="maxnpKE-3rk" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/hQoV5k" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> July 7, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:53:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep02</b>: <span class = "title">A Mouth Is a Mouth</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Ray tries to send Mickey back to prison. Angry with Ray,Abby allows her kids to spend the day with Mickey. Ray handles two crises.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="eUDYiKDrL2I" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/VPggq9" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> July 14, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:54:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep03</b>: <span class = "title">Twerk</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Mickey spends time with his sons. Ray 'buys' a talented hip-hop  artist,Marvin Gaye Washington, for his rapper neighbor. Bridget becomes friendly.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JWBNQ8o5sh0" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/GyHvar" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> July 21, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:49:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep04</b>: <span class = "title">Black Cadillac</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Ray is forced by Abby to visit Bel Air Academy to see Bridget's potentialschool, while trying to deal with a work situation. Mickey meets his ex.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="NbahJbClVvA" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/pNj9Ej" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> July 28, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:52:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep05</b>: <span class = "title">The Golem</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">The three Donovan brothers remember the anniversary of their sister's  demise. Ray and Avi get the money back that Bunchy spent on his house.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="gu2Xg5Msn0g" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/ZjHS1A" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> August 4, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:51:40</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep06</b>: <span class = "title">Housewarming</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Bunchy receives his money from the settlement with the Church. Mickeyand Ezra reminisce events while Mickey wears a wire. Ezra has an accident.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Hv9onuAlO0s" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/vQsWNq" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> August 11, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:53:00</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep07</b>: <span class = "title">New Birthday</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Ray tries to shut down Van Miller's investigation by drugging him, andusing this to create an incriminating video. Bunchy throws a party.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="gCIQ3WJk7-E" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/fdQuMw" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> September 8, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:53:05</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep08</b>: <span class = "title">Bridget</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Ray finds out about Bridget's relationship with Marvin and forbidsher from seeing him, but she visits him anyway, leading to emotional upset.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-lY6hzcz2xg" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/PnXbMH" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> August 18, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:51:05</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep09</b>: <span class = "title">Road Trip</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">The Donovans attend Daryll's fight at Terry's club. Meanwhile, Ray's dealwith Sully is put into action. Mickey has a rendezvous. Bunchy encounters</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FSGUoaaP9Cc" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/ULoYNM" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> August 25, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:50:22</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep10</b>: <span class = "title">Fite Nite</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Accepting Ray's offer to kill Mickey, Sully travels to Los Angeles,but the journey does not go as planned, Avi steps in. Asked by Coner</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="yQUgBfGzzDI" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/UWwxGP" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> September 8, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:53:09</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep11</b>: <span class = "title">Bucky Fuckn' Dent</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">Horrible secrets are revealed when the Donovan boys encounter thepriest who abused Bunchy and Ray when they were boys. Ray executes him.</div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="AvzK1oCJ2Yg" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/pw6nYq" width="220" height="342">
+    <div class = "duration"><b>Release Date: </b> September 22, 2013 </div>
+    <div class = "duration"><b>Duration:</b> 0:54:50</div>
+    <div class = "duration"><b>Ray Donovan</b></div>
+    <b class = "season">S1Ep12</b>: <span class = "title">Same Exactly</span>
+    <div class="rating"> <b>8.1/10 IMDb</b> </div>
+    <div class="storyline">With Sully on the run, Ray suggests to Frank a bold strategy in finding him;Abby leaves Ray a heartfelt message; Lena convinces Bridget to forgive.</div>
+</div>
+
+    </div>
+  </body>
+</html>
